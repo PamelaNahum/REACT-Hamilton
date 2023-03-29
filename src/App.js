@@ -11,28 +11,28 @@ const App = () => {
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Equipo</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td>Fabian</td>
+                                <td>Zúñiga</td>
+                                <td>8</td>
+                                <td><button type="button" class="btn btn-warning">Editar</button>
+                                    <button type="button" class="btn btn-danger ms-2">Eliminar</button></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
+                                <td>Daniela</td>
+                                <td>Gómez</td>
+                                <td>1</td>
+                                <td><button type="button" class="btn btn-warning">Editar</button>
+                                    <button type="button" class="btn btn-danger ms-2">Eliminar</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -40,13 +40,21 @@ const App = () => {
                 <div className='col-4'>
                     <h1>Formulario</h1>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" />
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido" />
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Número de Equipo</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Número Equipo" />
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+
                 </div>
             </div>
         </div>
