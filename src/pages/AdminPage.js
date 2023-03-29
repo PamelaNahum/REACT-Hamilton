@@ -1,6 +1,5 @@
 import React from "react";
-import FormularioAlumno from '../components/FormularioAlumno';
-import TablaAlumno from '../components/TablaAlumno';
+import { FormularioAlumno, TablaAlumno } from "../components";
 import { Link } from "react-router-dom";
 
 const AdminPage =()=>{
