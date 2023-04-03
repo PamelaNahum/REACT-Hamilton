@@ -1,5 +1,5 @@
 import React from "react";
-import FormularioAlumno from "../components/FormularioAlumno";
+import {FormularioAlumno} from "../components";
 
 const FormularioPage =()=>{
     return(

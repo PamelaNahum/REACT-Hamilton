@@ -1,5 +1,5 @@
 import React from "react";
-import TablaAlumno from "../components/TablaAlumno";
+import {TablaAlumno} from "../components";
 
 const ListaPage =()=>{
     return(
