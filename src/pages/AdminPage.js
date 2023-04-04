@@ -27,7 +27,7 @@ const AdminPage = () => {
     //cada vez que las variables que enten dentro de los [] CAMBIEN el useEffect va a correr 
     useEffect(()=>{
         obtenerEstudiantes();
-        agregarEstudiante();
+        //agregarEstudiante();
         //editarEstudiante();
         //eliminarEstudiante();
     },[])

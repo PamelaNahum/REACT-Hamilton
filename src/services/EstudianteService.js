@@ -28,14 +28,8 @@ const estudianteAdd = async (estudiante) => {
     }
     
     */
-    const estu ={
-        nombre: "Pamela",
-        apellido: "Nahum",
-        equipo_id: 5
-    }
-
    
-    const rest = await axios.post(baseURL+"/estudiante/Save", estu);
+    const rest = await axios.post(baseURL+"/estudiante/Save", estudiante);
     console.log(rest);
     return rest.data;
 }
