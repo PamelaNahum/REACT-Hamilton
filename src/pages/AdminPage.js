@@ -12,8 +12,9 @@ const AdminPage = () => {
         setEstudiante(await getAll());
     }
 
-    const agregarEstudiante = async ()=>{
-        await estudianteAdd();
+    const agregarEstudiante = async (estudiante)=>{
+        await estudianteAdd(estudiante);
+        obtenerEstudiantes();
     }
 
     const editarEstudiante = async ()=>{
@@ -27,9 +28,6 @@ const AdminPage = () => {
     //cada vez que las variables que enten dentro de los [] CAMBIEN el useEffect va a correr 
     useEffect(()=>{
         obtenerEstudiantes();
-        //agregarEstudiante();
-        //editarEstudiante();
-        //eliminarEstudiante();
     },[])
 
     //esto es un comentario
@@ -37,7 +35,7 @@ const AdminPage = () => {
         <div className='container md-4'>
             <div className='row'>
             <TablaAlumno estudiante={estudiante} />
-                <FormularioAlumno />
+                <FormularioAlumno agregarEstudiante={agregarEstudiante}/>
                 <Link to="/FormularioDeAlumnos"><button type="button" class="btn btn-info">Ir a formulario</button></Link>
                 <a href="/TablaDeAlumnos"><button type="button" class="btn btn-info">Ir a Tabla</button></a>
             </div>
