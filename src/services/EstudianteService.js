@@ -47,9 +47,9 @@ const estudianteEdit =  async (estudiante) =>{
 }
 
 const estudianteDelete = async (id) =>{
-    const estudiante_id= 46
+    //const estudiante_id= 46
     //si consideramos que id = 3 -> http://localhost:8080/estudiante/Delete/3
-    const rest = await axios.delete(baseURL+"/estudiante/Delete/"+estudiante_id);
+    const rest = await axios.delete(baseURL+"/estudiante/Delete/"+id);
     console.log(rest);
     return rest.data;
 }
