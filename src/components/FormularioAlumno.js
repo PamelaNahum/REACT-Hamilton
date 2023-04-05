@@ -26,7 +26,7 @@ const FormularioAlumno = ({agregarEstudiante}) => {
 
     return (
         <div className='col-4'>
-            <h1>Formulario</h1>
+            <h1>Agregar Alumno</h1>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nombre</label>
                 <input
