@@ -21,8 +21,9 @@ const AdminPage = () => {
         await estudianteEdit();
     }
 
-    const eliminarEstudiante = async ()=>{
-        await estudianteDelete();
+    const eliminarEstudiante = async (id)=>{
+        await estudianteDelete(id);
+        obtenerEstudiantes();
     }
     //cada vez que la pagina se recargue, el useEffect corre
     //cada vez que las variables que enten dentro de los [] CAMBIEN el useEffect va a correr 
@@ -34,7 +35,7 @@ const AdminPage = () => {
     return (
         <div className='container md-4'>
             <div className='row'>
-            <TablaAlumno estudiante={estudiante} />
+            <TablaAlumno estudiante={estudiante} eliminarEstudiante={eliminarEstudiante}/>
                 <FormularioAlumno agregarEstudiante={agregarEstudiante}/>
                 <Link to="/FormularioDeAlumnos"><button type="button" class="btn btn-info">Ir a formulario</button></Link>
                 <a href="/TablaDeAlumnos"><button type="button" class="btn btn-info">Ir a Tabla</button></a>
