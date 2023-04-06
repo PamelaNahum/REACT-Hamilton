@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import "../css/formulario.css"
 
 const estudianteInit = {
     "estudiante_id": 0,
