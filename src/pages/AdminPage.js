@@ -6,37 +6,48 @@ import { Link } from "react-router-dom";
 
 
 const AdminPage = () => {
-    const [estudiante, setEstudiante]=useState([]);
+    const [estudiante, setEstudiante] = useState([]);
+    const [estudianteEditado, setEstudianteEditado] = useState(null);
 
-    const obtenerEstudiantes=async()=>{
+    const obtenerEstudiantes = async () => {
         setEstudiante(await getAll());
     }
 
-    const agregarEstudiante = async (estudiante)=>{
+    const agregarEstudiante = async (estudiante) => {
         await estudianteAdd(estudiante);
         obtenerEstudiantes();
     }
 
-    const editarEstudiante = async ()=>{
-        await estudianteEdit();
+    const editarEstudiante = async (estudiante) => {
+        await estudianteEdit(estudiante);
+        obtenerEstudiantes();
+        setEstudianteEditado(null);
     }
 
-    const eliminarEstudiante = async (id)=>{
+    const eliminarEstudiante = async (id) => {
         await estudianteDelete(id);
         obtenerEstudiantes();
     }
     //cada vez que la pagina se recargue, el useEffect corre
     //cada vez que las variables que enten dentro de los [] CAMBIEN el useEffect va a correr 
-    useEffect(()=>{
+    useEffect(() => {
         obtenerEstudiantes();
-    },[])
+    }, [])
 
     //esto es un comentario
     return (
         <div className='container md-4'>
             <div className='row'>
-            <TablaAlumno estudiante={estudiante} eliminarEstudiante={eliminarEstudiante}/>
-                <FormularioAlumno agregarEstudiante={agregarEstudiante}/>
+                <TablaAlumno
+                    estudiante={estudiante}
+                    eliminarEstudiante={eliminarEstudiante} 
+                    setEstudianteEditado={setEstudianteEditado}/>
+                <FormularioAlumno
+                    agregarEstudiante={agregarEstudiante}
+                    estudianteEditado={estudianteEditado}
+                    setEstudianteEditado={setEstudianteEditado}
+                    editarEstudiante={editarEstudiante}
+                />
                 <Link to="/FormularioDeAlumnos"><button type="button" class="btn btn-info">Ir a formulario</button></Link>
                 <a href="/TablaDeAlumnos"><button type="button" class="btn btn-info">Ir a Tabla</button></a>
             </div>
